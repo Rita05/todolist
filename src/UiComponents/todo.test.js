@@ -2,17 +2,31 @@
 // import { it, describe } from '@testing-library/react';
 // import '@testing-library/jest-dom';
 // import { it, expect } from 'vitest';
-import App from './App';
+// import App from './App';
 
-// import { render } from "@testing-library/react";
+import { render } from "@testing-library/react";
 
-import renderer from 'react-test-renderer';
+// import renderer from 'react-test-renderer';
+
+import Todo from './todo';
 
 describe("Making sure it works", () => {
-  it("should sum 1 plus 1", () => {
+  it("test render", () => {
     // expect(1 + 1).toEqual(2)
     //let { getByText } = render("<App />");
-    renderer.create(<App />);
+    const props = {
+      tasks: [
+        {
+          id: 1, 
+          taskName: "testTask"
+        }
+      ],
+      onTaskСhanged: () => console.log("Test task changed"), 
+      onRemoveTask: () => {}, 
+      onAddTask: () => {}
+    }
+    // render(<Todo {...props}/>);
+    render(<div>HI</div>)
   })
 })
 
