@@ -2,6 +2,7 @@
 
 class UsersListApi {
 
+    // tasks=[{id: 1, taskName: 'buy products'},{id: 2, taskName: 'wash dishes'}, {id: 3, taskName: 'meeting with friends'} ]
     tasks=[]
     tasksCounter=0
 
@@ -19,6 +20,12 @@ class UsersListApi {
        return this.tasks
     }
 
+    async getTasks(){
+        return this.tasks
+    }
+
   }
   
   export default new UsersListApi()
+
+

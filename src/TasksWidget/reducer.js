@@ -1,3 +1,4 @@
+import { types } from '@babel/core'
 import {TYPES} from './action'
 
 const initialState={
@@ -23,6 +24,11 @@ const TaskListReducer=(state=initialState, action)=>{
             return{
                 ...state,
                 tasks: [...action.updatedTasks]
+            }
+        case TYPES.TYPE_ONGET_TASKS:
+            return{
+                ...state,
+                tasks: action.tasks
             }
         default:
             return state
