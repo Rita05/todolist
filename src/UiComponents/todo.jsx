@@ -11,7 +11,7 @@ const Todo=(props)=>{
                 <InputField onTaskСhanged={props.onTaskСhanged} task={props.task}/>
                 <ButtonTask onAddTask={props.onAddTask}/>
             </div>
-                <TasksList tasks={props.tasks}/>
+                <TasksList tasks={props.tasks} onRemoveTask={props.onRemoveTask}/>
        </div>
     )
 }

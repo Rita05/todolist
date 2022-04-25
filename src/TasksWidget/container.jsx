@@ -13,7 +13,8 @@ const TaskListContainer=(props)=>{
     const templateProps={
         onTaskСhanged: props.onTaskСhanged,
         onAddTask,
-        tasks: props.tasks
+        tasks: props.tasks,
+        onRemoveTask: props.onRemoveTask
     }
 
     console.log(props.task)
@@ -28,14 +29,16 @@ const TaskListContainer=(props)=>{
 
 const mapStateToProps = (state) => {
     return {
-       ...state.TaskListReducer
+       tasks: state.TaskListReducer.tasks
+
     }
 }
 
 const mapDispatchToProps = (dispatch) => {
     return {
         onTaskСhanged: (value) => dispatch(actions.onTaskСhangedAction(value)),
-        createNewTask: (task)=>dispatch(actions.createNewTaskAction(task))
+        createNewTask: (task)=>dispatch(actions.createNewTaskAction(task)),
+        onRemoveTask: (taskId)=>dispatch(actions.RemoveTaskAction(taskId))
     }
 
 }

@@ -17,7 +17,12 @@ const TaskListReducer=(state=initialState, action)=>{
         case TYPES.TYPE_ONADD_TASK:
             return{
                 ...state,
-                tasks: action.tasks
+                tasks: [...action.tasks]
+            }
+        case TYPES.TYPE_ONDELETE_TASK:
+            return{
+                ...state,
+                tasks: [...action.updatedTasks]
             }
         default:
             return state
