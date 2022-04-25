@@ -28,7 +28,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <Provider store={store}>
       <WindyProvider>
-        <App />
+        <App/>
         </WindyProvider>
     </Provider>
 </React.StrictMode>, 

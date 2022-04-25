@@ -26,6 +26,6 @@ class UsersListApi {
 
   }
   
-  export default new UsersListApi()
+export default new UsersListApi()
 
 
