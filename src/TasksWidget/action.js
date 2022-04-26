@@ -1,4 +1,4 @@
-import UsersListApi from './tasksapi'
+import TasksApi from './tasksapi'
 
 export const TYPES = {
     TYPE_ONCHANGED_TASK: 'get-array-users',
@@ -15,21 +15,21 @@ const onTaskСhangedAction = (value) => {
     }
 }
 
-const onAddTask=(tasks) =>{
+export const onAddTask=(tasks) =>{
     return{
         type: TYPES.TYPE_ONADD_TASK,
         tasks: tasks
     }
 }
 
-const onDeletTask=(updatedTasks)=>{
+export const onDeletTask=(updatedTasks)=>{
     return{
         type: TYPES.TYPE_ONDELETE_TASK,
         updatedTasks: updatedTasks
     }
 }
 
-const onGetTasks=(tasks)=>{
+export const onGetTasks=(tasks)=>{
     return{
         type: TYPES.TYPE_ONGET_TASKS,
         tasks: tasks
@@ -37,22 +37,22 @@ const onGetTasks=(tasks)=>{
 }
 
 
-export const createNewTaskAction=(task)=>async(dispatch)=>{
-    let tasks= await UsersListApi.addTask(task)
+export const createNewTaskAction=(task, api)=>async(dispatch)=>{
+    let tasks= await TasksApi.addTask(task)
     if(tasks){
         dispatch(onAddTask(tasks))
     }
 }
 
 export const RemoveTaskAction=(taskId)=>async(dispatch)=>{
-    let updatedTasks= await UsersListApi.deleteTask(taskId)
+    let updatedTasks= await TasksApi.deleteTask(taskId)
     if(updatedTasks){
         dispatch(onDeletTask(updatedTasks))
     }
 }
 
 export const getTasksAction=()=>async(dispatch)=>{
-    let tasks=await UsersListApi.getTasks()
+    let tasks=await TasksApi.getTasks()
     if(tasks){
         dispatch(onGetTasks(tasks))
     }

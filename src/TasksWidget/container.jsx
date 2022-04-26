@@ -2,6 +2,7 @@ import Todo from '../UiComponents/todo'
 import actions from './action'
 import {connect} from 'react-redux'
 import {useEffect} from 'react'
+import TasksApi from  './tasksapi'
 
 
 const TaskListContainer=(props)=>{
@@ -17,7 +18,7 @@ const TaskListContainer=(props)=>{
     }, [])
 
     const onAddTask=()=>{
-        props.createNewTask(props.task)
+        props.createNewTask(props.task, TasksApi)
     }
 
     const templateProps={
@@ -26,10 +27,9 @@ const TaskListContainer=(props)=>{
         task: props.task,
         tasks: props.tasks,
         onRemoveTask: props.onRemoveTask
-        //ongetTasksFromInterval: props.ongetTasksFromInterval
     }
 
-    console.log(props.task)
+    //console.log(props.task)
 
     return(
         <>
@@ -50,7 +50,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
     return {
         onTaskСhanged: (value) => dispatch(actions.onTaskСhangedAction(value)),
-        createNewTask: (task)=>dispatch(actions.createNewTaskAction(task)),
+        createNewTask: (task, api)=>dispatch(actions.createNewTaskAction(task, api)),
         onRemoveTask: (taskId)=>dispatch(actions.RemoveTaskAction(taskId)),
         ongetTasksFromInterval: ()=>dispatch(actions.getTasksAction())
     }

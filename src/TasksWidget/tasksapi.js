@@ -1,8 +1,7 @@
 
 
-class UsersListApi {
+class TasksApi {
 
-    // tasks=[{id: 1, taskName: 'buy products'},{id: 2, taskName: 'wash dishes'}, {id: 3, taskName: 'meeting with friends'} ]
     tasks=[]
     tasksCounter=0
 
@@ -26,6 +25,6 @@ class UsersListApi {
 
   }
   
-export default new UsersListApi()
+export default new TasksApi()
 
 
