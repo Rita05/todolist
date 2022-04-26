@@ -16,13 +16,15 @@
     "@testing-library/jest-dom": "^5.16.4",
     "@webeetle/windy": "^0.10.3",
     "create-babelrc": "^1.0.0",
+    "isomorphic-fetch": "^3.0.0",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-redux": "^8.0.1",
     "redux": "^4.2.0",
     "regenerator-runtime": "^0.13.9",
     "vite-jest": "^0.1.4",
-    "vite-plugin-environment": "^1.1.1"
+    "vite-plugin-environment": "^1.1.1",
+    "whatwg-fetch": "^1.1.0"
   },
   "devDependencies": {
     "@babel/plugin-syntax-jsx": "^7.16.7",
@@ -37,6 +39,7 @@
     "babel-jest": "^28.0.0",
     "babel-loader": "^8.2.5",
     "jest": "^27.5.1",
+    "msw": "^0.39.2",
     "prettier": "^2.6.2",
     "process": "^0.11.10",
     "react-test-renderer": "^18.0.0",

@@ -26,7 +26,8 @@ const TaskListContainer=(props)=>{
         onAddTask,
         task: props.task,
         tasks: props.tasks,
-        onRemoveTask: props.onRemoveTask
+        onRemoveTask: props.onRemoveTask,
+        handleReset: props.handleReset
     }
 
     //console.log(props.task)
@@ -52,7 +53,8 @@ const mapDispatchToProps = (dispatch) => {
         onTaskСhanged: (value) => dispatch(actions.onTaskСhangedAction(value)),
         createNewTask: (task, api)=>dispatch(actions.createNewTaskAction(task, api)),
         onRemoveTask: (taskId)=>dispatch(actions.RemoveTaskAction(taskId)),
-        ongetTasksFromInterval: ()=>dispatch(actions.getTasksAction())
+        ongetTasksFromInterval: ()=>dispatch(actions.getTasksAction()),
+        handleReset: ()=>dispatch(actions.resetInputTaskAction())
     }
 
 }

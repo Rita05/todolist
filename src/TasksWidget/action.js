@@ -4,7 +4,8 @@ export const TYPES = {
     TYPE_ONCHANGED_TASK: 'get-array-users',
     TYPE_ONADD_TASK: 'add-new-task',
     TYPE_ONDELETE_TASK: 'delete-task',
-    TYPE_ONGET_TASKS: 'loaded-tasks'
+    TYPE_ONGET_TASKS: 'loaded-tasks',
+    TYPE_RESET_INPUT: 'reset-inputTask-field'
 }
 
 
@@ -15,10 +16,17 @@ const onTaskСhangedAction = (value) => {
     }
 }
 
+const resetInputTaskAction = ()=>{
+    return{
+        type: TYPES.TYPE_RESET_INPUT
+    }
+}
+
+
 export const onAddTask=(tasks) =>{
     return{
         type: TYPES.TYPE_ONADD_TASK,
-        tasks: tasks
+        tasks
     }
 }
 
@@ -32,7 +40,7 @@ export const onDeletTask=(updatedTasks)=>{
 export const onGetTasks=(tasks)=>{
     return{
         type: TYPES.TYPE_ONGET_TASKS,
-        tasks: tasks
+        tasks
     }
 }
 
@@ -62,5 +70,6 @@ export default {
     onTaskСhangedAction,
     createNewTaskAction,
     RemoveTaskAction,
-    getTasksAction
+    getTasksAction,
+    resetInputTaskAction
 }

@@ -1,57 +1,64 @@
 import TaskListReducer from './reducer'
 import {onAddTask, onDeletTask,onGetTasks} from './action'
-import TasksApi from './tasksapi'
-import {getMockTasks, deleteMockTasks} from '../__mocks__/request'
 
 
 describe("Check all actions of getting tasks", () => {
-
 
     it(('get all tasks'), async()=>{
         let initialState={
             tasks: []
         }
-        let mockTasks=await getMockTasks()
-        console.log(mockTasks)
+        
+        const  serverTasks= [
+            {id: 1,  taskName: 'buy products'},
+            {id: 2,  taskName: 'wash the dishes'} 
+        ]
 
-        let action = onGetTasks(mockTasks)
+        let action = onGetTasks(serverTasks)
         let newState=TaskListReducer(initialState, action)
 
         expect(newState.tasks.length).toBe(2)
     })
+    
     it('new task should be added', async()=>{
 
         let initialState={
-            tasks: []
+            tasks: [ 
+                    {id: 1,  taskName: 'buy products'},
+                    {id: 2,  taskName: 'wash the dishes'}
+            ]
         }
+        let newTasks=[ 
+            {id: 1,  taskName: 'buy products'},
+            {id: 2,  taskName: 'wash the dishes'},
+            {id: 3,  taskName: 'take a shower'}
+        ]
 
-        let updatedTasks=await TasksApi.addTask("buy new products")
-
-        let action = onAddTask(updatedTasks)
+        let action = onAddTask(newTasks)
         let newState=TaskListReducer(initialState, action)
 
         console.log(newState.tasks)
 
-        expect(newState.tasks.length).toBe(1)
+        expect(newState.tasks.length).toBe(3)
 
     }) 
-    it('chosen task should be deleted', async()=>{
+    // it('chosen task should be deleted', async()=>{
 
-        let initialState={
-            tasks: []
-        }
+    //     let initialState={
+    //         tasks: []
+    //     }
         
-        let updatedTasks=await deleteMockTasks(2)
+    //     let updatedTasks=await deleteMockTasks(2)
 
-        console.log(updatedTasks)
+    //     console.log(updatedTasks)
 
-        let action = onDeletTask(updatedTasks)
-        let newState=TaskListReducer(initialState, action)
+    //     let action = onDeletTask(updatedTasks)
+    //     let newState=TaskListReducer(initialState, action)
 
-        console.log(newState.tasks)
+    //     console.log(newState.tasks)
 
-        expect(newState.tasks.length).toBe(1)
+    //     expect(newState.tasks.length).toBe(1)
 
-    })
+    // })
 })
 

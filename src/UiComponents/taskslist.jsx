@@ -4,7 +4,7 @@ const TasksList=(props)=>{
         {  
             props.tasks?.map(elem=>{
                 return (
-                <div key={elem.id} className="flex justify-between w-27.5rem px-4 py-2 bg-white">
+                <div key={elem.id} className="flex justify-between w-34rem px-4 py-2 bg-white">
                 <div className="flex justify-start items-center space-x-5">
                     <input type='checkbox' className='pt-4'/>
                     <span className="text-center">{elem.taskName}</span>

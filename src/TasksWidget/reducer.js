@@ -29,14 +29,16 @@ const TaskListReducer=(state=initialState, action)=>{
                 ...state,
                 tasks: action.tasks
             }
+        case TYPES.TYPE_RESET_INPUT:
+            return{
+                ...state,
+                task: ''
+            }
         default:
             return state
     }
 
 }
 
-
 export default TaskListReducer
-
-
 
