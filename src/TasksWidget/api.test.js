@@ -6,7 +6,7 @@ import { setupServer } from 'msw/node'
 
 const testTasks = [
     { id: 1, taskName: 'buy products' },
-    { id: 2, taskName: 'wash the dishes' }
+    { id: 2, taskName: 'wash the dishes'}
 ]
 
 const handlers = [
@@ -71,7 +71,7 @@ describe("Check all actions of getting tasks", () => {
         const tasks = await api.deleteTask(2)
         console.log(tasks)
         console.log(testTasks)
-        expect(tasks).not.toBeUndefined()
+        expect(tasks[2]).toBeUndefined()
         expect(tasks.length).toBe(2)
     })
 
