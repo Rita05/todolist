@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing render of taskslist component render correctly input task from 1`] = `
+<div
+  className="flex flex-col justify-center items-center space-y-5 m-20px"
+/>
+`;

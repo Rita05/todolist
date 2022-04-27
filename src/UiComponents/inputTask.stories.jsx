@@ -2,27 +2,27 @@ import InputField from './inputform'
 
 
 export default {
-    title: 'UI-InputField-Task/InputField',
+    title: 'UIComponents/UIInputField',
     component: InputField,
     argTypes: {
-        onTaskСhanged: { action: 'onTaskСhanged' },
-        value: ''
+        onTaskСhanged: { action: 'onTaskСhanged'},
+        handleReset: {ction: 'handleReset'},
+        task: {control: 'text'}
     }
     
 }
 
 const Template = (args) => <InputField {...args}/>;
 
-export const TasksChanged = Template.bind({});
+export const TasksDefault = Template.bind({});
 
-TasksChanged.agrs={
-    value: ''
-}
+// TasksDefault.args={
+//     task: 'sgdsgdgas',
+//     ...TasksDefault.onTaskСhanged
+// }
 
-export const ChangedProps = Template.bind({});
+// export const TasksChanged = Template.bind({});
 
-ChangedProps.agrs={
-    ...TasksChanged.args,
-    value: "sjfhshdfhsd"
-}
-
+// TasksChanged.args={
+//     task: ""
+// }

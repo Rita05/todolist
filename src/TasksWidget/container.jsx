@@ -7,7 +7,6 @@ import TasksApi from  './tasksapi'
 
 const TaskListContainer=(props)=>{
 
-
     useEffect(() => {
         props.ongetTasksFromInterval()
         const interval = setInterval(() => {

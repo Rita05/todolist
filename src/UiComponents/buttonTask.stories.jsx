@@ -1,10 +1,8 @@
 import ButtonTask from './buttontask'  
-import { action } from "@storybook/addon-actions"
-// import { createEventDispatcher } from 'svelte'
 
 
 export default {
-    title: 'UI-Button-Task/ButtonTask',
+    title: 'UIComponents/UIButtonTask',
     component: ButtonTask,
     argTypes: {
         onAddTask: { action: 'onAddTask' },
